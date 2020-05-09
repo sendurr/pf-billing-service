@@ -1,5 +1,6 @@
 package com.sendurr.platform.account.billing.service;
 
+import com.sendurr.platform.account.billing.config.AccountConfig;
 import com.sendurr.platform.account.billing.controller.AccountController;
 import com.sendurr.platform.account.billing.dto.AccountDTO;
 import com.sendurr.platform.account.billing.utils.RestUtils;
@@ -17,11 +18,14 @@ public class AccountService {
     @Autowired
     RestUtils restUtils;
 
+    AccountConfig accountConfig;
+
     public ResponseEntity<Object> getAccounts() {
 
         logger.info("Executing getAccounts service method");
 
         ResponseEntity<Object> responseEntity = null;
+//        logger.info(accountConfig.getAccountsUrl());
 
         responseEntity = restUtils.executeRESTGETCall("http://dummy.restapiexample.com/api/v1/employees");
 

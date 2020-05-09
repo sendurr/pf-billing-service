@@ -34,7 +34,7 @@ public class RestUtils {
         try {
             responseEntity = restTemplate.exchange(url, HttpMethod.GET, emptyEntity, Object.class);
             logger.info("REST GET call successful.");
-        } catch (HttpClientErrorException httpClientErrorException) {
+        } catch (Exception e) {
 
             logger.info("REST GET call failed. Executing default values");
 
